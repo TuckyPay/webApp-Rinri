@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>倫理学習サイト Ver0.2.0</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    
+</head>
+<body>
+    <input type="checkbox" id="MENU-BTN-CHECK">
+    <label for="MENU-BTN-CHECK" class="menu-btn"><span></span></label>
+
+    <aside class="menu-list">
+        <nav class="menu-list-tab">
+            <ul>
+                <li><a href="" class="Tab" id="0">ホーム</li>
+                <li><a href="" class="Tab" id="1">教科書_P01</a></li>
+                <li><a href="" class="Tab" id="2">教科書_P02</a></li>
+                <li><a href="" class="Tab" id="3">教科書_P03</a></li>
+                <li><a href="" class="Tab" id="4">教科書_P04</a></li>
+                <li><a href="" class="Tab" id="5">教科書_P05</a></li>
+                <li><a href="" class="Tab" id="6">教科書_P06</a></li>
+            </ul>
+        </nav>
+        <div class="menu-list-data">
+            <a href="" style="color: rgb(85, 85, 85); font-size: 0.5em; margin-left: 40px; width: 48px;" id="imp">注意事項</a>
+        </div>
+
+    </aside>
+
+    <main class="main-window">
+        <object id="Obj" data="Text//home.html" type="text/html"></object>
+    </main>
+
+    <sub>
+        <div class="sub-window"> 
+            <div style="display: flex; font-size: 1em;">
+                <p id="ScoreBoard">0</p>
+            </div>
+            
+            <button id="AnsBtn">採点</button>
+
+            <ol id="Box_list">
+                <!--ここにテキストが追加される-->
+            </ol>
+
+        </div>
+    </sub>
+</body>
+</html>

@@ -1,0 +1,172 @@
+body {
+    background-color: rgb(250, 250, 250);
+    margin: 0;  /*画面四隅の余白を除去*/
+    font-size: 2rem; /*フォントサイズを変更*/
+    display: flex;  /*mainタグにflexを適用 */
+    min-height: 100vh;  /*mainタグの縦幅の最小値を設定(要素が画面したいっぱいまで伸ばすため)*/
+}
+
+.main-window {
+    z-index: auto;
+    display: flex;
+    position: fixed;
+    top: 70px;
+    width: calc(100% - 236px);
+    height: 85%;
+}
+
+.main-window object {
+    padding: 20px;
+    padding-right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+sub{
+    z-index: auto;
+    width: 236px;
+    margin: 0 0 0 auto;
+    padding: 20px 0 0 0;
+    background-color: rgb(245, 245, 245);
+}
+
+.sub-window ol {
+    font-size: 0.7em;
+}
+
+.sub-window div p {
+    font-size: 0.8em;
+    margin: auto;
+}
+
+.sub-window button {
+    display: block;
+    width: 64px;
+    margin: 10px auto 10px auto;
+    padding: 3px;
+}
+
+.sub-window ol {
+    padding: 5px;
+    margin: 10px 10px 5px 30px;
+}
+
+.sub-window ol li {
+    padding: 5px;
+}
+
+.sub-window ol li input{
+    width: 100%;
+    font-size: 1em;
+}
+
+/*ハンバーガーメニュー(ここから↓)*/
+#MENU-BTN-CHECK {
+    display: none;
+}
+
+.menu-btn {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    z-index: 90;
+    align-items: center;    /*縦:中央*/
+    justify-content: center;    /*横:中央*/
+    background-color: rgb(0, 0, 0, 0);
+    transition: all 0.5s;
+}
+.menu-btn:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after{
+    position: absolute;
+    /*display: block; */
+    content: '';
+    width: 25px;
+    height: 3px;
+    background-color: rgb(85, 85, 85);
+    transition: all 200ms;
+}
+.menu-btn span:before { /*下線*/
+    top: 8px;
+}
+.menu-btn span:after {  /*上線*/
+    bottom: 8px;
+}
+
+#MENU-BTN-CHECK:checked ~ .menu-btn span {
+    background-color: rgba(85, 85, 85, 0)
+}
+#MENU-BTN-CHECK:checked ~ .menu-btn span:before {   /*下線45度*/
+    transform: translate(0 , -8px) rotate(45deg);
+}
+#MENU-BTN-CHECK:checked ~ .menu-btn span:after {    /*上線-45度*/
+    transform: translate(0 , 8px) rotate(-45deg);
+}
+
+
+.menu-list {
+    background-color: rgb(245, 245, 245);
+    font-size: 18px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: -256px;
+    top: 0;
+    display: flex;  /*asideタグにflexを適用 */
+    flex-direction: column; /*flexを適応することに起きる横並びになる問題を解決*/
+    z-index: 80;
+    width: 256px; /*asideタグの大きさを指定*/
+    transition: all 200ms;
+}
+#MENU-BTN-CHECK:checked ~ .menu-list {
+    left: 0;
+}
+
+.menu-list-tab {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-list-tab ul {
+    position: fixed;
+    margin: 0 auto;
+    list-style: none;
+    top: 70px;
+    padding: 0;
+    width: 256px;
+}
+
+.menu-list-tab ul li {
+    width: 216px;   /*256-40px*/
+    padding-left: 40px;
+    padding: 5px 0 5px 40px;
+}
+
+.menu-list-tab ul li:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+    transition: 200ms;
+}
+
+.menu-list-tab a {
+    display: flex;
+    color: rgb(128, 128, 128);
+    text-decoration: none;
+}
+
+.menu-list-data {
+    height: 30%;  /*divタグの高さを指定*/
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;   /*divタグを画面下に持ってくる*/
+}
+/*(ここまで↑)*/
+
+
